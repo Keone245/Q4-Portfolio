@@ -14,3 +14,48 @@ stars.forEach((star) => {
 
     } )
 })
+
+
+function addMovie() {
+const title = document.getElementById("title").value
+const year = document.getElementById("year").value
+const genre = document.getElementById("genre").value
+const rating = selectedRating
+
+const movie = {
+    title: title,
+    year: year,
+    genre: genre,
+    rating: rating
+    };
+
+    let movies = JSON.parse(localStorage.getItem("movies")) || [];
+
+    movies.push(movie);
+
+    localStorage.setItem("movies", JSON.stringify(movies));
+
+    displayMovies();
+}
+
+function displayMovies() {
+
+const movieList = document.getElementById("movieList");
+movieList.innerHTML = "";
+
+let movies = JSON.parse(localStorage.getItem("movies")) || [];
+
+movies.forEach(movie => {
+
+let stars = "&#9733".repeat(movie.rating);
+
+let movieItem = document.createElement("div");
+movieItem.classList.add("movie-item");
+
+movieItem.textContent = `${movie.title} (${movie.year}) - ${movie.genre}, Rating: ${stars}`;
+
+movieList.appendChild(movieItem);
+
+});
+
+}
