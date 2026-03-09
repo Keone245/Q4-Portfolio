@@ -17,10 +17,10 @@ stars.forEach((star) => {
 
 
 function addMovie() {
-const title = document.getElementById("title").value
-const year = document.getElementById("year").value
-const genre = document.getElementById("genre").value
-const rating = selectedRating
+    const title = document.getElementById("title").value
+    const year = document.getElementById("year").value
+    const genre = document.getElementById("genre").value
+    const rating = selectedRating
 
 const movie = {
     title: title,
@@ -35,6 +35,13 @@ const movie = {
 
     localStorage.setItem("movies", JSON.stringify(movies));
 
+    // clear form and rating
+    document.getElementById("title").value = "";
+    document.getElementById("year").value = "";
+    document.getElementById("genre").selectedIndex = 0;
+    selectedRating = 0;
+    stars.forEach(s => s.classList.remove("active"));
+
     displayMovies();
 }
 
@@ -45,9 +52,9 @@ movieList.innerHTML = "";
 
 let movies = JSON.parse(localStorage.getItem("movies")) || [];
 
-movies.forEach(movie => {
+    movies.forEach(movie => {
 
-let stars = "&#9733".repeat(movie.rating);
+let stars = "⭐".repeat(movie.rating);
 
 let movieItem = document.createElement("div");
 movieItem.classList.add("movie-item");
@@ -59,3 +66,14 @@ movieList.appendChild(movieItem);
 });
 
 }
+
+// hook up form submit handler and initialize list
+const form = document.getElementById("signupForm");
+if (form) {
+    form.addEventListener("submit", function(e) {
+        e.preventDefault(); // avoid navigation/post request
+        addMovie();
+    });
+}
+
+displayMovies();

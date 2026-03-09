@@ -8,20 +8,20 @@
   </head>
   <body>
    <h1>Add A movie</h1>
-   <form id="signupForm" method="post">
+   <form id="signupForm">
     <label>
     Title:
-    <input type="text" name="Title" required>
+    <input id="title" type="text" name="Title" required>
     </label>
     <br>
     <label>
     Year:
-    <input type="number" name="year" required>
+    <input id="year" type="number" name="year" required>
     </label>
     <br>
     <label>
     Genre:
-    <select name="Genre" required>
+    <select id="genre" name="Genre" required>
     <option value="" disabled selected> Select a Genre</option>
     <option value="Action">Action</option>
     <option value="Comedy">Comedy</option>
@@ -35,16 +35,23 @@
     <label for="rating">Rating:</label>
     
     <div class="rating">
-    <span class="star" data-value="1">&#9733;</span>
-    <span class="star" data-value="2">&#9733;</span>
-    <span class="star" data-value="3">&#9733;</span>
-    <span class="star" data-value="4">&#9733;</span>
-    <span class="star" data-value="5">&#9733;</span>
+    <span class="star" data-value="1">★</span>
+    <span class="star" data-value="2">★</span>
+    <span class="star" data-value="3">★</span>
+    <span class="star" data-value="4">★</span>
+    <span class="star" data-value="5">★</span>
     </div>
     
+    <div class="button-group">
+    <button type="submit">Add movie</button>
+    </div>
+
+
    </form>
    <script src="script.js"></script>
 
+   
+   
    <h2>Movie List</h2>
 <div id="movieList"></div>
 </body>
