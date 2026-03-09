@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Club Sign-Up Form</title>
+  </head>
+  <body>
+   <h1>Add A movie</h1>
+   <form id="signupForm" method="post">
+    <label>
+    Title:
+    <input type="text" name="Title" required>
+    </label>
+    <br>
+    <label>
+    Year:
+    <input type="number" name="year" required>
+    </label>
+    <br>
+    <label>
+    Genre:
+    <select name="Genre" required>
+    <option value="" disabled selected> Select a Genre</option>
+    <option value="Action">Action</option>
+    <option value="Comedy">Comedy</option>
+    <option value="Drama">Drama</option>
+    <option value="Horror">Horror</option>
+    <option value="Sci-Fi">Sci-Fi</option>
+    <option value="Romance">Romance</option>
+    </select>
+    </label>
+    <br>
+    <label for="rating">Rating:</label>
+    
+    <div class="rating">
+    <span class="star" data-value="1">&#9733;</span>
+    <span class="star" data-value="2">&#9733;</span>
+    <span class="star" data-value="3">&#9733;</span>
+    <span class="star" data-value="4">&#9733;</span>
+    <span class="star" data-value="5">&#9733;</span>
+    </div>
+    
+   </form>
+   <script src="script.js"></script>
+</body>
