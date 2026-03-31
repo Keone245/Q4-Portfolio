@@ -66,3 +66,6 @@ combined with 2 1 -10 1 as inputs as well
 5. JS manipulation of HTML Elements and CSS Properties
 
 ---
+
+
+Keone Daniel Robles / David Emmanuel Babaran
